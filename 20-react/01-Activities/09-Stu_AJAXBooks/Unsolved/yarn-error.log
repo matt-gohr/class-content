@@ -1,0 +1,64 @@
+Arguments: 
+  /Users/johnmcswain/.nvm/versions/node/v8.9.1/bin/node /Users/johnmcswain/.nvm/versions/node/v8.9.1/bin/yarn seed
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/go/bin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/git/bin:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Applications/mongodb-osx-x86_64-3.6.3/bin/:/usr/local/heroku/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/johnmcswain/Library/Application Support/GoodSync:/Library/Frameworks/Python.framework/Versions/2.6/bin:/Users/johnmcswain/.nvm/versions/node/v8.9.1/bin:/Users/johnmcswain/.rvm/gems/ruby-2.0.0-p0/bin:/Users/johnmcswain/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/johnmcswain/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/johnmcswain/.rvm/bin:/Applications/adt-bundle-mac-x86_64-20140321/sdk/platform-tools:/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.9.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "mern",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "server": "node server.js",
+      "client": "node scripts/start-client.js",
+      "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+      "build": "node scripts/build.js",
+      "seed": "node scripts/seedDB.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "installDeps": "yarn && cd client && yarn"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "concurrently": "^3.5.0",
+      "nodemon": "^1.11.0"
+    },
+    "dependencies": {
+      "body-parser": "^1.17.2",
+      "express": "^4.15.4",
+      "mongoose": "^5.0.11"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node scripts/seedDB.js
+  Directory: /Users/johnmcswain/Desktop/GTNov2017Bootcamp/GTATL201711FSF2-Class-Repository-FSF/Class-Content/20-react/01-Activities/09-Stu_AJAXBooks/Unsolved
+  Output:
+  
+      at ProcessTermError.MessageError (/Users/johnmcswain/.nvm/versions/node/v8.9.1/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/Users/johnmcswain/.nvm/versions/node/v8.9.1/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/Users/johnmcswain/.nvm/versions/node/v8.9.1/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

@@ -1,0 +1,13 @@
+
+a {
+    font-size: 64px;
+}
+
+a:hover {
+    background-color: red;
+}
+
+a:active {
+    font-size: 16px;
+    background-color: blue;
+}

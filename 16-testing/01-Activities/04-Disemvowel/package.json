@@ -1,0 +1,17 @@
+{
+  "name": "04-disemvowel",
+  "version": "1.0.0",
+  "description": "In this activity we will write tests for a function designed to remove all vowels from a given string.",
+  "main": "disemvowel.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2"
+  }
+}

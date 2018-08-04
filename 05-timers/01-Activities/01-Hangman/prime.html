@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>prime number</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //DIDN'T FINSIH
+    var isPrime;
+    for (var i = 1; i <= 100; i++) {
+      //check even or odd
+      if (i % 2 === 0) {
+
+        console.log("even");
+
+
+      }
+      //odd
+      else {
+        console.log("odd");
+        for (var x = 2; x < i; x++) {
+          if (i % x === 0) {
+
+            console.log("not prime");
+            break;
+          } else {
+            console.log("prime");
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

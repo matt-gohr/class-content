@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>New York Times</title>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container header">
+    <div class="jumbotron">
+      <h1><span class="glyphicon glyphicon-list-alt" id="headglyph"></span> New York Times Search</h1>
+    </div>
+  </div>
+
+  <!-- *********************** BEGIN INPUT BOX ************************** -->
+  <div class="container inputBox">
+
+    <div id="parameters">Search Parameters</div>
+
+    <div class="form-group">
+      <label for="comment">Search Term:</label>
+      <textarea class="form-control" rows="1" id="searchterm"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Number of Records to Retrieve</label>
+      <textarea class="form-control" rows="1" id="numberrecords"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Start Year (optional):</label>
+      <textarea class="form-control" rows="1" id="startyear"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">End Year (optional):</label>
+      <textarea class="form-control" rows="1" id="endyear"></textarea>
+    </div>
+
+    <!-- Search Button -->
+    <div class="btn-default" id="search"><span class="glyphicon glyphicon-search"></span> Search</div>
+    <!-- Clear Button -->
+    <div class="btn-default" id="clear"><span class="glyphicon glyphicon-retweet"></span> Clear Results</div>
+  </div>
+
+  <!-- *********************** END INPUT BOX ************************** -->
+
+  <br>
+
+  <!-- *********************** BEGIN OUTPUT BOX ************************** -->
+  <div class="container output box">
+    <div id="toparticles">Top Articles</div>
+
+
+
+
+
+  </div>
+  <!-- *********************** END OUTPUT BOX ************************** -->
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="script.js">
+  </script>
+</body>
+
+</html>
