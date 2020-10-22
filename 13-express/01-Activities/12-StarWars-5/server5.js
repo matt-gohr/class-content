@@ -16,30 +16,30 @@ var characters = [
     name: "Yoda",
     role: "Jedi Master",
     age: 900,
-    forcePoints: 2000
+    forcePoints: 2000,
   },
   {
     routeName: "darthmaul",
     name: "Darth Maul",
     role: "Sith Lord",
     age: 200,
-    forcePoints: 1200
+    forcePoints: 1200,
   },
   {
     routeName: "obiwankenobi",
     name: "Obi Wan Kenobi",
     role: "Jedi Master",
     age: 55,
-    forcePoints: 1350
-  }
+    forcePoints: 1350,
+  },
 ];
 
 // Routes
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
-app.get("/api/:characters?", function(req, res) {
+app.get("/api/:characters?", function (req, res) {
   var chosen = req.params.characters;
 
   if (chosen) {
@@ -57,7 +57,7 @@ app.get("/api/:characters?", function(req, res) {
   return res.json(characters);
 });
 
-app.post("/api/new", function(req, res) {
+app.post("/api/new", function (req, res) {
   var newcharacter = req.body;
 
   console.log(newcharacter);
@@ -67,6 +67,6 @@ app.post("/api/new", function(req, res) {
   res.json(newcharacter);
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });

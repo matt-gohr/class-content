@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Basic jQuery Dump</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Basic jQuery Dump</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="empty-div"></div>
 
-        <div id="empty-div"></div>
+    <!-- Here we're adding a bit of CSS -->
+    <style>
+      .fancy {
+        font-size: 100px;
+        color: green;
+      }
+    </style>
 
-        <!-- Here we're adding a bit of CSS -->
-        <style>
-            .fancy {
-                font-size: 100px;
-                color: green;
-            }
-        </style>
+    <script type="text/javascript">
+      $("#empty-div").html("<h1>Hello friends!</h1>");
 
-        <script type="text/javascript">
+      //create new div
+      var newDiv = $("<div>");
 
-            $("#empty-div").html("<h1>Hello friends!</h1>");
+      //put text in div
+      newDiv.text("A pleasure to meet you!");
 
-            //create new div
-            var newDiv = $("<div>");
+      $("#empty-div").append(newDiv);
 
-            //put text in div
-            newDiv.text("A pleasure to meet you!");
-
-            $("#empty-div").append(newDiv);
-
-            // If we need to apply some CSS, we can quickly do so, using the jQuery ".attr" method.
-            newDiv.attr("class", "fancy");
-
-        </script>
-
-    </body>
+      // If we need to apply some CSS, we can quickly do so, using the jQuery ".attr" method.
+      newDiv.attr("class", "fancy");
+    </script>
+  </body>
 </html>

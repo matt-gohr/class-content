@@ -14,20 +14,51 @@ var collections = ["animals"];
 var db = mongojs(databaseUrl, collections);
 
 // This makes sure that any errors are logged if mongodb runs into an issue
-db.on("error", function(error) {
+db.on("error", function (error) {
   console.log("Database Error:", error);
 });
 
 // Routes
 // 1. At the root path, send a simple hello world message to the browser
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
+  db.animals.insert({
+    name: "Dog",
+    numlegs: 4,
+    class: "mammal",
+    weight: 60,
+    whatIWouldReallyCallIt: "Captain Fuzzy Face II",
+  });
+
+  db.animals.insert({
+    name: "Lion",
+    numlegs: 4,
+    class: "mammal",
+    weight: 300,
+    whatIWouldReallyCallIt: "Grumbles",
+  });
+
+  db.animals.insert({
+    name: "Zebra",
+    numlegs: 4,
+    class: "mammal",
+    weight: 500,
+    whatIWouldReallyCallIt: "Stripes",
+  });
+
+  db.animals.insert({
+    name: "Chameleon",
+    numlegs: 4,
+    class: "Reptile",
+    weight: 5,
+    whatIWouldReallyCallIt: "Scales",
+  });
   res.send("Hello world");
 });
 
 // 2. At the "/all" path, display every entry in the animals collection
-app.get("/all", function(req, res) {
+app.get("/all", function (req, res) {
   // Query: In our database, go to the animals collection, then "find" everything
-  db.animals.find({}, function(err, found) {
+  db.animals.find({}, function (err, found) {
     // Log any errors if the server encounters one
     if (err) {
       console.log(err);
@@ -40,10 +71,10 @@ app.get("/all", function(req, res) {
 });
 
 // 3. At the "/name" path, display every entry in the animals collection, sorted by name
-app.get("/name", function(req, res) {
+app.get("/name", function (req, res) {
   // Query: In our database, go to the animals collection, then "find" everything,
   // but this time, sort it by name (1 means ascending order)
-  db.animals.find().sort({ name: 1 }, function(err, found) {
+  db.animals.find().sort({ name: 1 }, function (err, found) {
     // Log any errors if the server encounters one
     if (err) {
       console.log(err);
@@ -56,10 +87,10 @@ app.get("/name", function(req, res) {
 });
 
 // 4. At the "/weight" path, display every entry in the animals collection, sorted by weight
-app.get("/weight", function(req, res) {
+app.get("/weight", function (req, res) {
   // Query: In our database, go to the animals collection, then "find" everything,
   // but this time, sort it by weight (-1 means descending order)
-  db.animals.find().sort({ weight: -1 }, function(err, found) {
+  db.animals.find().sort({ weight: -1 }, function (err, found) {
     // Log any errors if the server encounters one
     if (err) {
       console.log(err);
@@ -72,6 +103,6 @@ app.get("/weight", function(req, res) {
 });
 
 // Set the app to listen on port 3000
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("App running on port 3000!");
 });

@@ -8,7 +8,7 @@ var Example = require("./exampleModel.js");
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/schemaexample", {
-  useMongoClient: true
+  useMongoClient: true,
 });
 
 // Create an object containing dummy data to save to the database
@@ -17,16 +17,25 @@ var data = {
   boolean: false,
   string:
     "\"Don't worry if it doesn't work right. If everything did, you'd be out of a job\" - Mosher's Law of Software Engineering",
-  number: 42
+  number: 1,
 };
 
 // Save a new Example using the data object
 Example.create(data)
-  .then(function(dbExample) {
-    // If saved successfully, print the new Example document to the console
+  .then((dbExample) => {
     console.log(dbExample);
+    dbExample.save();
+    console.log("saved");
+    Example.find((err, res) => {
+      console.log(
+        "here:",
+        res.map((r) => r.toJSON())
+      );
+    });
   })
-  .catch(function(err) {
+  .catch((err) => {
     // If an error occurs, log the error message
     console.log(err.message);
   });
+
+// If saved successfully, print the new Example document to the console

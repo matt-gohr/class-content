@@ -12,7 +12,7 @@ var ExampleSchema = new Schema({
   string: {
     type: String,
     trim: true,
-    required: "String is Required"
+    required: "String is Required",
   },
   // `number` is of type Number
   // `number` must be unique
@@ -20,14 +20,14 @@ var ExampleSchema = new Schema({
   number: {
     type: Number,
     unique: true,
-    required: true
+    required: true,
   },
   // `email` is of type String
   // `email` must match the regex pattern below and throws a custom error message if it does not
   // You can read more about RegEx Patterns here https://www.regexbuddy.com/regex.html
   email: {
     type: String,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
   },
   // `boolean` must be of type Boolean
   boolean: Boolean,
@@ -36,7 +36,7 @@ var ExampleSchema = new Schema({
   // `date` must be of type Date. The default value is the current date
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   // `longstring` must be of type String
   // `longstring` uses a custom validation function to only accept values 6 characters or more
@@ -45,18 +45,18 @@ var ExampleSchema = new Schema({
     type: String,
     validate: [
       // Function takes in the new `longstring` value to be saved as an argument
-      function(input) {
+      function (input) {
         // If this returns true, proceed. If not, return the error message below
         return input.length >= 6;
       },
       // Error Message
-      "Longstring should be longer."
-    ]
-  }
+      "Longstring should be longer.",
+    ],
+  },
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Example = mongoose.model("Example", ExampleSchema);
+// var Example = mongoose.model("Example", ExampleSchema);
 
 // Export the Example model
-module.exports = Example;
+module.exports = mongoose.model("Example", ExampleSchema);
